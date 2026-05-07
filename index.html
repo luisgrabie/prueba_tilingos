@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+
+  <div class="hero">
+  <h1 class="app-title">
+    <span class="wallet">Wallet</span>
+    <span class="agent"> Agent</span><br>
+    <span class="ai">AI</span>
+  </h1>
+<p class="app-subtitle">
+  Deploy and control your on-chain wallet for agents on L1 Radix network.<br>
+  Manage assets, whitelist wallets, and automate security rules.
+</p>
+</div>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- DISCLAIMER -->
+<div class="modal" id="disclaimer">
+  <div class="modal-box">
+
+    <img src="/wallet-agent-ai.png" alt="Wallet Agent AI" class="modal-logo">
+
+    <h2>Disclaimer</h2>
+
+    <p>
+      This dApp is experimental. Use at your own risk.
+      Always verify transactions before signing.
+    </p>
+
+    <button class="web3-btn" onclick="closeDisclaimer()">
+      Enter
+    </button>
+
+  </div>
+</div>
+
+
+<!-- HEADER -->
+<div class="top-bar">
+  <img src="/wallet-agent-ai.png" alt="Wallet Agent AI" class="logo-img">
+  <radix-connect-button></radix-connect-button>
+</div>
+
+
+<!-- CENTRAL CARD-->
+<div class="main-card-wrapper">
+
+  <div class="main-card" onclick="openHow()">
+   
+
+
+
+    <h3>How it Works</h3>
+      <p class="wallet-link">
+  
+    <a href="https://wallet.radixdlt.com" target="_blank">
+     Install a Radix Wallet 
+    </a>
+    </p> 
+     
+    <div class="main-hidden">
+
+      <div class="step">
+        <strong>1. Install SDK for Agent Use</strong>
+        <code>npm install wallet-agent-ai-radix</code>
+      </div>
+
+      <div class="step">
+        <strong>2. Instantiate your Personal Contract</strong>
+        <p>Limit what your Agent will do</p>
+      </div>
+
+      <div class="step">
+        <strong>3. Manage First Limits</strong>
+        <p>Whitelist · Limits · Assets</p>
+        <p>Agent begin to use Free of you</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="how-modal" id="howModal">
+   <div class="how-modal-box">
+   <h2 id="modalTitle">Title</h2>
+   <div id="modalContent"></div>
+   <button onclick="closeHow()">Close</button>
+
+  </div>
+</div>
+
+
+<!-- ACTIONS -->
+<section class="grid">
+
+  <div class="card" onclick="instantiate()">
+    <h3>Instantiate Contract</h3>
+    <p>Create your personal contract.</p>
+  </div>
+
+  <div class="card" onclick="deposit()">
+    <h3>Deposit</h3>
+    <p>Send funds into your agent wallet.</p>
+  </div>
+
+  <div class="card" onclick="freeze()">
+    <h3>Freeze</h3>
+    <p>Lock all outgoing activity.</p>
+  </div>
+
+  <div class="card" onclick="unfreeze()">
+    <h3>Unfreeze</h3>
+    <p>Restore operations.</p>
+  </div>
+
+</section>
+
+<!-- OWNER PANEL -->
+<section class="panel">
+  <h2>Owner More Controls</h2>
+
+  <select>
+    <option>Add wallet to whitelist</option>
+    <option>Remove from whitelist</option>
+    <option>Renew badge</option>
+    <option>Revoke badge</option>
+    <option>Issue a new badge</option>
+    <option>Add new asset</option>
+    <option>View balances</option>
+    <option>Increase limits</option>
+    <option>Reset daily cap</option>
+  </select>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="app-footer">
+
+  <!-- IZQUIERDA -->
+  <div class="footer-column">
+    <h2>Quick Links</h2>
+    
+    <a href="https://github.com/your-repo/README.md" target="_blank">README</a>
+    
+    <a href="#" onclick="openAbout()">About</a>
+  </div>
+
+  <!-- CENTRO -->
+  <div class="footer-column">
+    <h2>Resources</h2>
+    
+    <a href="#" onclick="openHow()">How it Works</a>
+    <a href="#" onclick="openTerms()">Terms & Conditions</a>
+    <a href="#" onclick="openDisclaimer()">Disclaimer</a>
+    <a href="#" onclick="openPrivacy()">Privacy Note</a>
+    <a href="https://t.me/linuxx_xrd" target="_blank">Support</a>
+    
+  </div>
+
+  <!-- DERECHA (LOGO) -->
+  <div class="footer-column footer-logo">
+    <img src="Radix-logo.png" class="footer-logo-img" alt="Radix">
+  </div>
+</footer>
+
+
+  <!-- DISCLAIMER INICIAL (AVISO) -->
+<script>
+  function closeDisclaimer() {
+    document.getElementById("disclaimer").style.display = "none";
+  }
+</script>
+
+<script type="module" src="main.js"></script>
+
+</body>
+</html>
